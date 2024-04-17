@@ -34,7 +34,7 @@ class player(gameSprite):
         self.left = left
     def move(self):
         keysPressed = key.get_pressed()
-        if left:
+        if self.left:
             if keysPressed[K_w] and self.rect.y > (0 + self.w) + padding:
                 self.rect.y += self.speed
             elif keysPressed[K_s] and self.rect.y > (winy - padding):
