@@ -45,7 +45,7 @@ class player(gameSprite):
             elif keysPressed[K_DOWN] and self.rect.y > (winy - padding):
                 self.rect.y -= self.speed
 
-paddle1 = player
+paddle1 = player('paddleTexture.jpeg',10,20,10,100,5,True)
 
 clock = time.Clock()
 FPS = 60
@@ -53,6 +53,9 @@ FPS = 60
 game = True
 while game:
     window.blit(background,(0,0))
+    paddle1.blit()
+    
+    paddle1.move()
     
     for e in event.get():
         if e.type == QUIT:
