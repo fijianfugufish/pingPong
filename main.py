@@ -7,7 +7,7 @@ padding = 5
 
 window = display.set_mode((winx,winy))
 display.set_caption('pingPong')
-background = transform.scale(image.load('blue.png'),(700,500))
+background = transform.scale(image.load('black.png'),(700,500))
 
 font.init()
 style = font.Font(None,36)
