@@ -2,12 +2,12 @@ from pygame import *
 from math import sqrt, pow
 from random import randint
 
-winx,winy = 700,700
+winx,winy = 700,500
 padding = 5
 
 window = display.set_mode((winx,winy))
 display.set_caption('pingPong')
-background = transform.scale(image.load('blue.png'),(700,700))
+background = transform.scale(image.load('blue.png'),(700,500))
 
 font.init()
 style = font.Font(None,36)
