@@ -46,6 +46,7 @@ class player(gameSprite):
                 self.rect.y += self.speed
 
 paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
+paddle2 = player('paddleTexture.jpg',685,20,10,100,5,False)
 
 clock = time.Clock()
 FPS = 60
@@ -54,8 +55,10 @@ game = True
 while game:
     window.blit(background,(0,0))
     paddle1.blit()
+    paddle2.blit()
     
     paddle1.move()
+    paddle2.move()
     
     for e in event.get():
         if e.type == QUIT:
