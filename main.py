@@ -45,6 +45,8 @@ class player(gameSprite):
             elif keysPressed[K_DOWN] and self.rect.y > (winy - padding):
                 self.rect.y -= self.speed
 
+paddle1 = player
+
 clock = time.Clock()
 FPS = 60
 
