@@ -1,4 +1,4 @@
-# pingPong.py
+# pingPong
 
 its literally just ping pong bruv.
 im not too sure what you were expecting.
