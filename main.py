@@ -35,17 +35,17 @@ class player(gameSprite):
     def move(self):
         keysPressed = key.get_pressed()
         if self.left:
-            if keysPressed[K_w] and self.rect.y > (0 + self.w) + padding:
+            if keysPressed[K_w] and self.rect.y > (0) + padding:
                 self.rect.y -= self.speed
-            elif keysPressed[K_s] and self.rect.y < (winy - padding):
+            elif keysPressed[K_s] and self.rect.y < (winy - self.h - padding):
                 self.rect.y += self.speed
         else:
-            if keysPressed[K_UP] and self.rect.y > (0 + self.w) + padding:
+            if keysPressed[K_UP] and self.rect.y > (0) + padding:
                 self.rect.y -= self.speed
-            elif keysPressed[K_DOWN] and self.rect.y < (winy - padding):
+            elif keysPressed[K_DOWN] and self.rect.y < (winy - self.h - padding):
                 self.rect.y += self.speed
 
-paddle1 = player('paddleTexture.jpg',10,20,10,100,5,True)
+paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
 
 clock = time.Clock()
 FPS = 60
