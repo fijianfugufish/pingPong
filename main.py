@@ -28,15 +28,21 @@ class gameSprite(sprite.Sprite):
         return Rect.colliderect(self.rect, obj.rect)
 
 class player(gameSprite):
-    def __init__(self,sprite,X,Y,w,h,speed): 
+    def __init__(self,sprite,X,Y,w,h,speed,left): 
         super().__init__(sprite,X,Y,w,h,speed)
-        self.cd = 10
+        self.left = left
     def move(self):
         keysPressed = key.get_pressed()
-        if keysPressed[K_w] and self.rect.y > (0 + self.w) + padding:
-            self.rect.y += self.speed
-        elif keysPressed[K_s] and self.rect.y > (winy - padding):
-            self.rect.y -= self.speed
+        if left:
+            if keysPressed[K_w] and self.rect.y > (0 + self.w) + padding:
+                self.rect.y += self.speed
+            elif keysPressed[K_s] and self.rect.y > (winy - padding):
+                self.rect.y -= self.speed
+        else:
+            if keysPressed[K_UP] and self.rect.y > (0 + self.w) + padding:
+                self.rect.y += self.speed
+            elif keysPressed[K_DOWN] and self.rect.y > (winy - padding):
+                self.rect.y -= self.speed
 
 clock = time.Clock()
 FPS = 60
