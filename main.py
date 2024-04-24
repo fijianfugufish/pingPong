@@ -64,6 +64,12 @@ class ball(gameSprite):
             self.Yv = self.speed * -1
         elif self.rect.y >= 500 - self.w:
             self.Yv = self.speed
+        if self.rect.x <= -100:
+            global game
+            game = False
+        elif self.rect.y >= 600 - self.w:
+            global game
+            game = False
 
 paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
 paddle2 = player('paddleTexture.jpg',685,20,10,100,5,False)
