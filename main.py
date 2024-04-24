@@ -80,6 +80,8 @@ ball = ball('ball.png',350,250,50,50,2.5)
 clock = time.Clock()
 FPS = 60
 
+eelbruv = False
+
 while game:
     window.blit(background,(0,0))
     paddle1.blit()
@@ -96,8 +98,12 @@ while game:
 
     for e in event.get():
         if e.type == QUIT:
-            quit()
-            
+            eelbruv = True
+            break
+
+    if eelbruv:
+        break    
+    
     clock.tick(FPS)
 
 lost = gameSprite('lost.png',0,0,700,500,0)
