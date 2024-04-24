@@ -69,7 +69,7 @@ class ball(gameSprite):
         if self.rect.x <= -100:
             global game
             game = False
-        elif self.rect.x >= 600 - self.w:
+        elif self.rect.x >= 800 - self.w:
             game = False
 
 paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
