@@ -53,7 +53,7 @@ FPS = 60
 
 game = True
 while game:
-    window.blit(background,(0,0))
+    window.blit(background,(-500,-700))
     paddle1.blit()
     paddle2.blit()
     
@@ -67,4 +67,3 @@ while game:
     clock.tick(FPS)
 
     display.update()
-
