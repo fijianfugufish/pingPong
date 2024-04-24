@@ -70,7 +70,6 @@ class ball(gameSprite):
             global game
             game = False
         elif self.rect.y >= 600 - self.w:
-            global game
             game = False
 
 paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
@@ -92,14 +91,14 @@ while game:
     ball.move()
 
     ball.yodoiyoingyeah()
-    
-    for e in event.get():
-        if e.type == QUIT:
-            game = False
-
-    clock.tick(FPS)
 
     display.update()
+
+    for e in event.get():
+        if e.type == QUIT:
+            quit()
+            
+    clock.tick(FPS)
 
 lost = gameSprite('lost.png',0,0,700,500,0)
 lost.blit()
@@ -107,7 +106,7 @@ lost.blit()
 while not game:
     for e in event.get():
         if e.type == QUIT:
-            game = False
+            game = True
 
     clock.tick(FPS)
 
