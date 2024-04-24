@@ -5,6 +5,8 @@ from random import randint
 winx,winy = 700,500
 padding = 5
 
+game = True
+
 window = display.set_mode((winx,winy))
 display.set_caption('pingPong')
 background = transform.scale(image.load('black.png'),(700,500))
@@ -79,7 +81,6 @@ ball = ball('ball.png',350,250,50,50,2.5)
 clock = time.Clock()
 FPS = 60
 
-game = True
 while game:
     window.blit(background,(0,0))
     paddle1.blit()
