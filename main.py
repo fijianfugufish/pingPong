@@ -59,11 +59,11 @@ class ball(gameSprite):
         if self.checkCollision(paddle1):
             self.speed += 0.25
             self.Xv = self.speed * -1
-            self.Yv = randint(self.speed * -1,self.speed)
+            self.Yv = randint((self.speed * -1) // 1,(self.speed) // 1)
         elif self.checkCollision(paddle2):
             self.speed += 0.25
             self.Xv = self.speed 
-            self.Yv = randint(self.speed * -1,self.speed)
+            self.Yv = randint((self.speed * -1) // 1,(self.speed) // 1)
         if self.rect.y <= 0:
             self.Yv = self.speed * -1
         elif self.rect.y >= 500 - self.w:
