@@ -45,8 +45,19 @@ class player(gameSprite):
             elif keysPressed[K_DOWN] and self.rect.y < (winy - self.h - padding):
                 self.rect.y += self.speed
 
+class ball(gameSprite):
+    def __init__(self,sprite,X,Y,w,h,speed,Xv,Yv): 
+        super().__init__(sprite,X,Y,w,h,speed)
+        self.Xv = Xv
+        self.Yv = Yv
+    def move(self):
+        self.rect.y -= self.Yv
+        self.rect.x -= self.Xv
+
 paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
 paddle2 = player('paddleTexture.jpg',685,20,10,100,5,False)
+
+ball = ball('ball.png',350,250,50,50,10,0,0)
 
 clock = time.Clock()
 FPS = 60
@@ -56,9 +67,11 @@ while game:
     window.blit(background,(-500,-700))
     paddle1.blit()
     paddle2.blit()
+    ball.blit()
     
     paddle1.move()
     paddle2.move()
+    ball.move()
     
     for e in event.get():
         if e.type == QUIT:
