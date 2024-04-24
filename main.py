@@ -7,7 +7,7 @@ padding = 5
 
 window = display.set_mode((winx,winy))
 display.set_caption('pingPong')
-background = transform.scale(image.load('black.png'),(7000,5000))
+background = transform.scale(image.load('black.png'),(700,500))
 
 font.init()
 style = font.Font(None,36)
@@ -64,7 +64,7 @@ FPS = 60
 
 game = True
 while game:
-    window.blit(background,(-500,-700))
+    window.blit(background,(0,0))
     paddle1.blit()
     paddle2.blit()
     ball.blit()
