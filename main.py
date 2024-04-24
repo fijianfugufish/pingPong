@@ -55,8 +55,10 @@ class ball(gameSprite):
         self.rect.x -= self.Xv
     def yodoiyoingyeah(self):
         if self.checkCollision(paddle1):
+            self.speed += 0.25
             self.Xv = self.speed * -1
         elif self.checkCollision(paddle2):
+            self.speed += 0.25
             self.Xv = self.speed 
         if self.rect.y <= 0:
             self.Yv = self.speed * -1
