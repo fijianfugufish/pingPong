@@ -99,3 +99,15 @@ while game:
     clock.tick(FPS)
 
     display.update()
+
+lost = gameSprite('lost.png',0,0,700,500,0)
+lost.blit()
+
+while not game:
+    for e in event.get():
+        if e.type == QUIT:
+            game = False
+
+    clock.tick(FPS)
+
+    display.update()
