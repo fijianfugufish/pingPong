@@ -46,18 +46,27 @@ class player(gameSprite):
                 self.rect.y += self.speed
 
 class ball(gameSprite):
-    def __init__(self,sprite,X,Y,w,h,speed,Xv,Yv): 
+    def __init__(self,sprite,X,Y,w,h,speed): 
         super().__init__(sprite,X,Y,w,h,speed)
-        self.Xv = Xv
-        self.Yv = Yv
+        self.Xv = speed
+        self.Yv = speed
     def move(self):
         self.rect.y -= self.Yv
         self.rect.x -= self.Xv
+    def yodoiyoingyeah(self):
+        if self.checkCollision(paddle1):
+            self.Xv = self.speed * -1
+        elif self.checkCollision(paddle2):
+            self.Xv = self.speed 
+        if self.rect.y <= 0:
+            self.Yv = self.speed * -1
+        elif self.rect.y >= 500 - self.w:
+            self.Yv = self.speed
 
 paddle1 = player('paddleTexture.jpg',5,20,10,100,5,True)
 paddle2 = player('paddleTexture.jpg',685,20,10,100,5,False)
 
-ball = ball('ball.png',350,250,50,50,10,0,0)
+ball = ball('ball.png',350,250,50,50,2.5)
 
 clock = time.Clock()
 FPS = 60
@@ -72,6 +81,8 @@ while game:
     paddle1.move()
     paddle2.move()
     ball.move()
+
+    ball.yodoiyoingyeah()
     
     for e in event.get():
         if e.type == QUIT:
